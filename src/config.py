@@ -1,4 +1,5 @@
 import numpy as np
+import os
 
 FEATURE_WEIGHTS= {
     'limited_skins': 5.0,
@@ -29,11 +30,13 @@ CATEGORICAL_FEATURES = {
     'fame_level': ['Global','Lunar','Martian','Saturnian','Solar','Meteoric','Alien']
 }
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 DATA_PATHS = {
-    'raw_data': 'data/raw_data.csv',
-    'processed_data': 'data/processed_data.pkl',
-    'model': 'models/brawl_account_worth_model.pkl',
-    'encoder': 'models/encoder.pkl',
-    'scaler': 'models/scaler.pkl'
+    'raw_data': os.path.join(BASE_DIR, 'data', 'raw_data.csv'),
+    'processed_data': os.path.join(BASE_DIR, 'data', 'processed_data.pkl'),
+    'model': os.path.join(BASE_DIR, 'models', 'brawl_account_worth_model.pkl'),
+    'encoder': os.path.join(BASE_DIR, 'models', 'encoder.pkl'),
+    'scaler': os.path.join(BASE_DIR, 'models', 'scaler.pkl')
 }
 
